@@ -1,0 +1,45 @@
+.current-section .container {
+	position: relative;
+}
+
+.sizes {
+	position: absolute;
+	display: flex;
+	top: 370px;
+}
+.sizes div {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background: #ffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+	box-shadow: 0 8px 6px -6px black;
+}
+.sizes div span {
+	color: #000;
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
+.product-description {
+	margin-top: 2.5rem;
+}
+
+.spec {
+	margin: 20px 0;
+	background: lightgrey;
+	padding: 5px;
+	width: 11%;
+}
+
+.product-details-icons {
+	margin-bottom: 20px;
+	display: flex;
+}
+.product-details-icons span {
+	padding-right: 15px;
+	font-size: 1rem;
+}
