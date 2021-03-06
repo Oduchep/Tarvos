@@ -1,11 +1,12 @@
-.current-section .container {
+.current-section .item-section {
 	position: relative;
 }
 
 .sizes {
 	position: absolute;
 	display: flex;
-	top: 370px;
+	bottom: -19px;
+	left: 0px;
 }
 .sizes div {
 	height: 40px;
@@ -41,5 +42,5 @@
 }
 .product-details-icons span {
 	padding-right: 15px;
-	font-size: 1rem;
+	font-size: 1.5rem;
 }

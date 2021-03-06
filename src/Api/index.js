@@ -11,6 +11,8 @@ const items = [
 		image: first,
 		price: "N 199",
 		quantity: 2,
+		size: "",
+		number: null,
 	},
 	{
 		id: 2,
@@ -18,6 +20,8 @@ const items = [
 		image: second,
 		price: "N 299",
 		quantity: 3,
+		size: "",
+		number: null,
 	},
 	{
 		id: 3,
@@ -25,6 +29,8 @@ const items = [
 		image: third,
 		price: "N 199",
 		quantity: 2,
+		size: "",
+		number: null,
 	},
 	{
 		id: 4,
@@ -32,6 +38,8 @@ const items = [
 		image: fourth,
 		price: "N 199",
 		quantity: 2,
+		size: "",
+		number: null,
 	},
 	{
 		id: 5,
@@ -39,6 +47,8 @@ const items = [
 		image: fifth,
 		price: "N 150",
 		quantity: 3,
+		size: "",
+		number: null,
 	},
 ];
 

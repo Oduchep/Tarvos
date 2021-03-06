@@ -1,0 +1,49 @@
+.header-section-1,
+.header-section-2 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+	align-items: center;
+}
+
+.header-section-1-div-icons span,
+.header-section-2-div-icons span {
+	padding-left: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.header-section-2 .logo {
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	background: #000;
+	color: #fff;
+	border-radius: 50%;
+	margin: auto;
+}
+.header-section-2 .logo p {
+	padding-top: 10px;
+}
+
+.shopping-cart-nav {
+	margin-top: 1rem;
+}
+.shopping-cart-nav,
+.shopping-cart-nav-div-1 {
+	display: flex;
+	align-items: center;
+}
+.shopping-cart-nav .shopping-cart-nav-div-2 {
+	padding-left: 1.5rem;
+}
+
+.link-red {
+	position: relative;
+}
+.red-dot {
+	position: absolute;
+	font-size: 2.4rem;
+	color: red;
+	left: 8px;
+	bottom: 0px;
+}

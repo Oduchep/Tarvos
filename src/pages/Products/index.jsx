@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
-import { Header } from "../../components/Header";
+import { MainNav } from "../../components/MainNav";
+import { ProductsNav } from "../../components/ProductsNav";
 import { faceMasks } from "../../Api/index";
 import "./Products.css";
 
-function Products() {
+function Products(props) {
 	const items = faceMasks();
 
 	return (
 		<>
-			<Header />
+			<MainNav />
+			<ProductsNav shoppingCart={props.shoppingCart} />
 			<main className="main">
 				{items.map((item) => (
 					<section key={item.id} className="item-section">

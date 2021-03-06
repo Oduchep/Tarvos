@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Header";
+import { MainNav } from "../../components/MainNav";
+import { ShoppingCartNav } from "../../components/ShoppingCartNav";
 import "./ViewCart.css";
 
 function ViewCart(props) {
@@ -8,7 +9,8 @@ function ViewCart(props) {
 
 	return (
 		<>
-			<Header />
+			<MainNav />
+			<ShoppingCartNav cartItem={cart} />
 			<main>
 				{cart.map((item) => (
 					<section key={item.id} className="cart-section">

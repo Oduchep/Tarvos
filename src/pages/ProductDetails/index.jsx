@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Header";
+import { MainNav } from "../../components/MainNav";
+import { ProductDetailsNav } from "../../components/ProductDetailsNav";
 import "./ProductDetails.css";
 import { faceMasks } from "../../Api/index";
 import { BsHeart, BsShield, BsShuffle } from "react-icons/bs";
@@ -7,6 +8,7 @@ import { BiSmile, BiSun } from "react-icons/bi";
 import { Button } from "../../components/Button";
 
 function ProductDetails(props) {
+	const [success, setSuccess] = useState("");
 	const items = faceMasks();
 	const picked = props.match.params.id;
 
@@ -16,16 +18,18 @@ function ProductDetails(props) {
 	const current = selected[0];
 	console.log(current);
 
-	const [cartItem, setCartItem] = useState([]);
 	const handleAdd = () => {
-		setCartItem([current]);
-		console.log(cartItem);
+		props.setShoppingCart([current]);
+		setSuccess("Item has been added to cart");
+		console.log(props.shoppingCart);
 	};
 
 	return (
 		<>
-			<Header cartItem={cartItem} />
+			<MainNav />
+			<ProductDetailsNav cartItem={props.shoppingCart} />
 			<main className="main">
+				{success && <div className="success-message">{success}</div>}
 				<section key={current.id} className="current-section">
 					<article className="item-section">
 						<div className="sizes">
@@ -88,6 +92,7 @@ function ProductDetails(props) {
 							</span>
 							<p> Wider face coverage for maximum protection </p>
 						</div>
+
 						<Button className="btn" text="ADD TO CART" handleClick={handleAdd} />
 					</div>
 				</section>
