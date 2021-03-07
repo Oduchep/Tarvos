@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MainNav } from "../../components/MainNav";
 import { ProductDetailsNav } from "../../components/ProductDetailsNav";
 import "./ProductDetails.css";
@@ -18,10 +19,19 @@ function ProductDetails(props) {
 	const current = selected[0];
 	console.log(current);
 
+	const [toggle, setToggle] = useState({ clicked: false });
 	const handleAdd = () => {
-		props.setShoppingCart([current]);
-		setSuccess("Item has been added to cart");
+		setToggle({ clicked: !toggle.clicked });
 		console.log(props.shoppingCart);
+	};
+
+	const handleSize = (e) => {
+		const target = e.target.innerText;
+		props.setShoppingCart([current]);
+		current.size = target;
+		setSuccess("Item has been added to cart");
+		setToggle({ clicked: !toggle.clicked });
+		console.log(current.size);
 	};
 
 	return (
@@ -33,13 +43,13 @@ function ProductDetails(props) {
 				<section key={current.id} className="current-section">
 					<article className="item-section">
 						<div className="sizes">
-							<div className="small">
+							<div className={current.size === "S" ? "small-picked" : "small"}>
 								<span> S </span>
 							</div>
-							<div className="medium">
+							<div className={current.size === "M" ? "medium-picked" : "medium"}>
 								<span> M </span>
 							</div>
-							<div className="large">
+							<div className={current.size === "L" ? "large-picked" : "large"}>
 								<span> L </span>
 							</div>
 						</div>
@@ -51,7 +61,7 @@ function ProductDetails(props) {
 								<h2 className="item-name">{current.name}</h2>
 								<div className="item-quantity-heart-div">
 									<div>
-										<span className="item-price">{current.price}</span>
+										<span className="item-price">N {current.price}</span>
 										<span className="item-quantity">Unisex Pack of {current.quantity}</span>
 									</div>
 									<BsHeart />
@@ -59,7 +69,7 @@ function ProductDetails(props) {
 							</div>
 						</div>
 					</article>
-					<div className="container">
+					<div className="container second-container">
 						<div className="product-description">
 							<p> 100% Original Products</p>
 							<p>
@@ -93,7 +103,30 @@ function ProductDetails(props) {
 							<p> Wider face coverage for maximum protection </p>
 						</div>
 
-						<Button className="btn" text="ADD TO CART" handleClick={handleAdd} />
+						<div className={toggle.clicked ? "select-size" : "display-none"}>
+							<div className="select-size-container">
+								<h2> Select Size </h2>
+								<div className="select-size-div">
+									<div className="small">
+										<span onClick={handleSize}> S </span>
+									</div>
+									<div className="medium">
+										<span onClick={handleSize}> M </span>
+									</div>
+									<div className="large">
+										<span onClick={handleSize}> L </span>
+									</div>
+								</div>
+								<span> Size Chart </span>
+							</div>
+						</div>
+						{current.size === "" ? (
+							<Button className="btn" text="ADD TO CART" handleClick={handleAdd} />
+						) : (
+							<Link to="/products">
+								<Button className="btn" text="CONTINUE" />
+							</Link>
+						)}
 					</div>
 				</section>
 			</main>

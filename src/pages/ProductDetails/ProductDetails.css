@@ -8,11 +8,15 @@
 	bottom: -19px;
 	left: 0px;
 }
-.sizes div {
+.sizes .small,
+.sizes .medium,
+.sizes .large,
+.sizes .small-picked,
+.sizes .medium-picked,
+.sizes .large-picked {
 	height: 40px;
 	width: 40px;
 	border-radius: 50%;
-	background: #ffff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,9 +24,21 @@
 	box-shadow: 0 8px 6px -6px black;
 }
 .sizes div span {
-	color: #000;
 	font-weight: bolder;
 	font-size: 1rem;
+}
+
+.sizes .small,
+.sizes .medium,
+.sizes .large {
+	background: #ffff;
+	color: #000;
+}
+.sizes .small-picked,
+.sizes .medium-picked,
+.sizes .large-picked {
+	background: #000;
+	color: #ffff;
 }
 
 .product-description {
@@ -43,4 +59,46 @@
 .product-details-icons span {
 	padding-right: 15px;
 	font-size: 1.5rem;
+}
+
+.display-none {
+	display: none;
+}
+
+.select-size {
+	position: absolute;
+	right: -50px;
+	top: 400px;
+	background: #000;
+	width: 400px;
+	height: 400px;
+	color: #ffff;
+	border-radius: 50%;
+}
+.select-size-container {
+	position: relative;
+	width: 200px;
+	margin-left: 5rem;
+	margin-top: 4rem;
+}
+
+.select-size-div {
+	display: flex;
+	margin: 1rem 0;
+}
+.select-size-div div {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background: #ffff;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 20px 1rem 0;
+	cursor: pointer;
+}
+.select-size-container span {
+	border-bottom: 1px solid #ffff;
+	padding-bottom: 5px;
 }

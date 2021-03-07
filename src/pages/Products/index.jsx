@@ -8,6 +8,7 @@ import "./Products.css";
 
 function Products(props) {
 	const items = faceMasks();
+	console.log(typeof props.shoppingCart);
 
 	return (
 		<>
@@ -26,7 +27,7 @@ function Products(props) {
 								<h2 className="item-name">{item.name}</h2>
 								<div className="item-quantity-heart-div">
 									<div>
-										<span className="item-price">{item.price}</span>
+										<span className="item-price">N {item.price}</span>
 										<span className="item-quantity">Unisex Pack of {item.quantity}</span>
 									</div>
 									<BsHeart />

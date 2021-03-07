@@ -29,6 +29,7 @@
 	border: 0;
 	background: #ffff;
 	color: red;
+	cursor: pointer;
 }
 
 .cart-quantity-control {
@@ -48,4 +49,23 @@
 .cart-quantity-control .plus,
 .cart-quantity-control .minus {
 	font-size: 1.8rem;
+}
+
+.cart-payment-details {
+	width: 90%;
+	margin: 5rem auto auto auto;
+}
+
+.total-discount {
+	padding: 1rem 0 0.5rem 0;
+	border-bottom: 1px solid lightgrey;
+}
+.total-discount div,
+.final-amount {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1rem;
+}
+.final-amount {
+	margin: 1.5rem 0 2rem 0;
 }
