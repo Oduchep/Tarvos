@@ -103,6 +103,14 @@ function ProductDetails(props) {
 							<p> Wider face coverage for maximum protection </p>
 						</div>
 
+						{current.size === "" ? (
+							<Button className="btn" text="ADD TO CART" handleClick={handleAdd} />
+						) : (
+							<Link to="/products">
+								<Button className="btn" text="CONTINUE" />
+							</Link>
+						)}
+
 						<div className={toggle.clicked ? "select-size" : "display-none"}>
 							<div className="select-size-container">
 								<h2> Select Size </h2>
@@ -120,13 +128,6 @@ function ProductDetails(props) {
 								<span> Size Chart </span>
 							</div>
 						</div>
-						{current.size === "" ? (
-							<Button className="btn" text="ADD TO CART" handleClick={handleAdd} />
-						) : (
-							<Link to="/products">
-								<Button className="btn" text="CONTINUE" />
-							</Link>
-						)}
 					</div>
 				</section>
 			</main>

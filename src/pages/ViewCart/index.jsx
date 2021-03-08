@@ -8,11 +8,24 @@ function ViewCart(props) {
 	const [cart, setCart] = useState(props.location.state);
 	console.log(cart);
 
-	const hadnleDelete = (itemId) => {
+	const handleDelete = (itemId) => {
 		const items = cart.filter((c) => c.id !== itemId);
 		props.setShoppingCart(items);
 		setCart(items);
 	};
+
+	let index = 0;
+	let cash = [];
+	while (index < cart.length) {
+		cash.push(cart[index].price);
+		console.log(cash);
+		index += 1;
+	}
+
+	const sum = cash.reduce(function (a, b) {
+		return a + b;
+	}, 0);
+	console.log(sum);
 
 	return (
 		<>
@@ -33,7 +46,7 @@ function ViewCart(props) {
 										<span className="item-quantity">Unisex Pack of {item.quantity}</span>
 									</div>
 									<p> Size : {item.size} </p>
-									<button className="remove" onClick={() => hadnleDelete(item.id)}>
+									<button className="remove" onClick={() => handleDelete(item.id)}>
 										REMOVE
 									</button>
 								</div>
@@ -55,7 +68,7 @@ function ViewCart(props) {
 					<div className="total-discount">
 						<div>
 							<p>Total Amount</p>
-							<h3> Rs {}</h3>
+							<h3> Rs {sum}</h3>
 						</div>
 						<div>
 							<p> Discount </p>
@@ -64,7 +77,7 @@ function ViewCart(props) {
 					</div>
 					<div className="final-amount">
 						<p> Final Amount </p>
-						<h3> Rs {} </h3>
+						<h3> Rs {sum} </h3>
 					</div>
 
 					<Button className="btn" text="CHECKOUT" />
