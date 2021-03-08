@@ -27,7 +27,7 @@ function ProductDetails(props) {
 
 	const handleSize = (e) => {
 		const target = e.target.innerText;
-		props.setShoppingCart([current]);
+		props.setShoppingCart([...props.shoppingCart, current]);
 		current.size = target;
 		setSuccess("Item has been added to cart");
 		setToggle({ clicked: !toggle.clicked });

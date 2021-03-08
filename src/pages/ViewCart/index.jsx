@@ -43,26 +43,6 @@ function ViewCart(props) {
 									<span className="minus"> - </span>
 								</div>
 							</div>
-
-							<article className="cart-payment-details">
-								<p> Cart Details</p>
-								<div className="total-discount">
-									<div>
-										<p>Total Amount</p>
-										<h3> Rs {item.price}</h3>
-									</div>
-									<div>
-										<p> Discount </p>
-										<h3> Rs {0} </h3>
-									</div>
-								</div>
-								<div className="final-amount">
-									<p> Final Amount </p>
-									<h3> Rs {item.price} </h3>
-								</div>
-
-								<Button className="btn" text="CHECKOUT" />
-							</article>
 						</section>
 					))
 				) : (
@@ -70,6 +50,25 @@ function ViewCart(props) {
 						<p> Your cart is empty </p>
 					</div>
 				)}
+				<section className="cart-payment-details">
+					<p> Cart Details</p>
+					<div className="total-discount">
+						<div>
+							<p>Total Amount</p>
+							<h3> Rs {}</h3>
+						</div>
+						<div>
+							<p> Discount </p>
+							<h3> Rs {0} </h3>
+						</div>
+					</div>
+					<div className="final-amount">
+						<p> Final Amount </p>
+						<h3> Rs {} </h3>
+					</div>
+
+					<Button className="btn" text="CHECKOUT" />
+				</section>
 			</main>
 		</>
 	);
